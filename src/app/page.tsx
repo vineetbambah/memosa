@@ -1,103 +1,46 @@
-import Image from "next/image";
-
+import { MoveRight } from 'lucide-react';
+const navigation = [
+  { name: 'Features', href: '#',id:1 },
+  { name: 'Pricing', href: '#' ,id:2},
+  { name: 'FAQs', href: '#' ,id:3},
+];
+const Features = [
+  { name: '📝 Effortless Note Creation', description: 'Type or speak your thoughts — our intuitive editor makes capturing ideas fast and fluid..', id: 1 },
+  { name: '🧠 AI Summaries & Insights', description: 'Long notes? No problem. Our AI condenses them into concise summaries and extracts action points.', id: 2 },
+  { name: '🔁 Real-time Sync', description: 'Your notes automatically stay up-to-date across all your devices. No refresh needed.', id: 3 },
+  { name: '📅 Auto-Organized', description: 'Your notes are automatically sorted by topics, timelines, or projects — no manual tags needed.', id: 4 },
+  { name: '🔐 Private & Secure', description: 'Your thoughts are yours. End-to-end encryption ensures they stay that way.', id: 5 },
+];
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+  <>
+  <nav className="flex items-center w-1/2 mx-auto justify-between text-2xl p-6">
+    <h1 className='font-black'>Memosa <span className=' text-[#8A63D2]'>AI</span></h1>
+    <div className='flex space-x-6'>
+      {navigation.map((item) => (
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          key={item.id}
+          href={item.href}
+        >{item.name}</a>
+      ))}
     </div>
+      <button className="bg-[#8A63D2] text-white px-6 py-2 rounded-3xl font-bold">
+        Login
+      </button>
+  </nav>
+  <main>
+    <section className="flex flex-col items-center mt-40 min-h-screen bg-gray-100/40">
+      <h1 className="text-4xl mb-4">Your smart <span className="font-bold">second brain,</span> powered by AI</h1>
+      <p className="text-lg mb-8 w-1/3 text-center font-bold text-gray-700">Write freely, and let our AI organize, summarize, and highlight key insights — so you can focus on thinking, not formatting.</p>
+      <button className="bg-[#8A63D2] text-white px-6 font-bold py-3 rounded-3xl w-52 justify-center space-x-1 group flex flex-row ">
+        <p>Try for free</p>
+        <MoveRight className='group-hover:translate-x-2 duration-75' />
+      </button>
+    </section>
+  </main>
+  <div>
+
+  </div>
+  </>
   );
 }
