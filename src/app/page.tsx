@@ -1,3 +1,4 @@
+import { Accordion,AccordionContent,AccordionItem,AccordionTrigger } from '@/components/ui/accordion';
 import { MoveRight } from 'lucide-react';
 const navigation = [
   { name: 'Features', href: '#', id: 1 },
@@ -50,6 +51,31 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <section className='flex flex-col items-center justify-center min-h-screen bg-gray-100/40'>
+        <h1 className='text-4xl font-bold'>FAQs</h1>
+        <Accordion type="single" collapsible className="w-1/2 mt-10">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className='text-2xl font-bold'>What is Memosa AI?</AccordionTrigger>
+            <AccordionContent className='text-lg text-gray-700'>Memosa AI is a smart note-taking tool that uses artificial intelligence to help you capture, organize, and summarize your thoughts effortlessly.</AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger className='text-2xl font-bold'>How does Memosa AI work?</AccordionTrigger>
+            <AccordionContent className='text-lg text-gray-700'>Memosa AI uses advanced algorithms to analyze your notes, extract key insights, and provide real-time summaries, making it easier for you to focus on what matters most.</AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger className='text-2xl font-bold'>Is my data secure with Memosa AI?</AccordionTrigger>
+            <AccordionContent className='text-lg text-gray-700'>Yes, Memosa AI prioritizes your privacy and security. We use end-to-end encryption to ensure that your notes are safe and accessible only to you.</AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-4">
+            <AccordionTrigger className='text-2xl font-bold'>Can I access Memosa AI on multiple devices?</AccordionTrigger>
+            <AccordionContent className='text-lg text-gray-700'>Absolutely! Memosa AI syncs your notes across all your devices in real-time, so you can access them anytime, anywhere.</AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-5">
+            <AccordionTrigger className='text-2xl font-bold'>Is there a free trial available?</AccordionTrigger>
+            <AccordionContent className='text-lg text-gray-700'>Yes, we offer a free trial so you can experience the power of Memosa AI before committing to a subscription.</AccordionContent>
+          </AccordionItem>
+          </Accordion>
+      </section>
     </>
   );
 }
