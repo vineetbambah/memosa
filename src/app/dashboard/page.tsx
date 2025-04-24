@@ -1,4 +1,5 @@
 import {House, Notebook, NotebookPen, CircleUserRound} from "lucide-react";
+import Note from '@/app/dashboard/note'
 const Home = () => {
   return (
     <div className="flex flex-row items-center">
@@ -12,10 +13,12 @@ const Home = () => {
         </div>
         <a><CircleUserRound className="scale-150 cursor-pointer"/></a>
       </div>
-      <div className=" w-full h-screen">
+      <div className="w-full h-screen">
       <h1 className="font-bold text-2xl">Memosa <span className="text-[#8A63D2]">AI</span></h1>
+      <div className="" id="notesList">
+        <Note title="blah" body="blah" />
       </div>
-      <div className="bg-blue-200 fixed bottom-2 w-1/2 rounded-md">dock</div>
+      </div>
     </div>
   );
 }
